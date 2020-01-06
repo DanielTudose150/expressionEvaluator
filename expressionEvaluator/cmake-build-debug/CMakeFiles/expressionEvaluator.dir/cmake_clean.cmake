@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj"
   "CMakeFiles/expressionEvaluator.dir/main.cpp.obj"
   "CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj"
   "CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj"

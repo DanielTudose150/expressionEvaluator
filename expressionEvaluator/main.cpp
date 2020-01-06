@@ -1,18 +1,8 @@
 #include <iostream>
-#include "tipuri/stivaDouble.h"
+#include "evaluator/evaluator.h"
 
-DStack stiv;
-double x;
+std::string s="salve";
 int main() {
-    for(int i=0;i<3;i++)
-    {
-        std::cin>>x;
-        stiv.push(x);
-    }
-    while(!stiv.isEmpty())
-    {
-        std::cout<<stiv.top()<<' ';
-        stiv.pop();
-    }
+    std::cout<<isSeparator(s);
     return 0;
 }
