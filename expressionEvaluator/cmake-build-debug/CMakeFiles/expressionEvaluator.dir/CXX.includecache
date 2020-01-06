@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/WID/CLion - Projects/expressionEvaluator/main.cpp
+iostream
+-
+tipuri/stivaDouble.h
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/stivaDouble.h
+
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/listeDouble.h
+
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/stivaDouble.cpp
+stivaDouble.h
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/stivaDouble.h
+
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/stivaDouble.h
+listeDouble.h
+C:/WID/CLion - Projects/expressionEvaluator/tipuri/listeDouble.h
+
