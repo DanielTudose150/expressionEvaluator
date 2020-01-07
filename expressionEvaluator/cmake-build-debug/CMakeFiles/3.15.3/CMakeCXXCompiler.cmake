@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "C:/WID/Apps/MinGWBun/bin/g++.exe")
+set(CMAKE_CXX_COMPILER "C:/WID/Apps/MinGW/bin/g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "8.2.0")
@@ -19,11 +19,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/WID/Apps/MinGWBun/bin/ar.exe")
-set(CMAKE_CXX_COMPILER_AR "C:/WID/Apps/MinGWBun/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "C:/WID/Apps/MinGWBun/bin/ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "C:/WID/Apps/MinGWBun/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/WID/Apps/MinGWBun/bin/ld.exe")
+set(CMAKE_AR "C:/WID/Apps/MinGW/bin/ar.exe")
+set(CMAKE_CXX_COMPILER_AR "C:/WID/Apps/MinGW/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/WID/Apps/MinGW/bin/ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "C:/WID/Apps/MinGW/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/WID/Apps/MinGW/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -73,7 +73,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0/include/c++;C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0/include/c++/mingw32;C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0/include/c++/backward;C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0/include;C:/WID/Apps/MinGWBun/include;C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0/include-fixed")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0/include/c++;C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0/include/c++/mingw32;C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0/include/c++/backward;C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0/include;C:/WID/Apps/MinGW/include;C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0/include-fixed")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/WID/Apps/MinGWBun/lib/gcc/mingw32/8.2.0;C:/WID/Apps/MinGWBun/lib/gcc;C:/WID/Apps/MinGWBun/mingw32/lib;C:/WID/Apps/MinGWBun/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/WID/Apps/MinGW/lib/gcc/mingw32/8.2.0;C:/WID/Apps/MinGW/lib/gcc;C:/WID/Apps/MinGW/mingw32/lib;C:/WID/Apps/MinGW/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

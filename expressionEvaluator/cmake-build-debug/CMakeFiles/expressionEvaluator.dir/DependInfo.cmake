@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/evaluator/evaluator.cpp" "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj"
-  "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/main.cpp" "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/main.cpp.obj"
-  "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/coada.cpp" "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj"
-  "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.cpp" "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj"
-  "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaString.cpp" "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj"
+  "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/evaluator/evaluator.cpp" "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj"
+  "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/main.cpp" "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/main.cpp.obj"
+  "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/tipuri/coada.cpp" "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj"
+  "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.cpp" "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj"
+  "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/tipuri/stivaString.cpp" "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
