@@ -13,107 +13,46 @@ void toLower(std::string &s)
                 s[i]+=32;
 }
 
-bool isLeftOperator(const char &c)
-{
-    switch(c)
-    {
-        case '-':
-        case '+':
-        case '/':
-        case '*':
-        case '\\':
-        case '<':
-        case '>':
-        case '=':
-        case 'a':
-        case 'o':
-        case 'x':
-        case 'm':
-        case 'n':
-            return 1;
-        default:
-            return 0;
-    }
-}
-
-bool isRightOperator(const char &c)
-{
-    switch(c)
-    {
-        case '>':
-        case '=':
-        case 'r':
-        case 'n':
-        case 'o':
-            return 1;
-        default:
-            return 0;
-    }
-}
-
-bool isLetterOperator(const char &c)
-{
-    return (c=='a' || c=='m' || c=='n' || c=='o' || c=='x');
-}
-
-bool isOperatorString(const std::string &s)
-{
-    return (s=="+"   ||
-            s=="-"   ||
-            s=="*"   ||
-            s=="/"   ||
-            s=="\\"  ||
-            s=="="   ||
-            s=="<"   ||
-            s==">"   ||
-            s=="<>"  ||
-            s=="<="  ||
-            s==">="  ||
-            s=="or"  ||
-            s=="and" ||
-            s=="xor" ||
-            s=="not" ||
-            s=="mod");
-}
-
 bool isSeparator(const char &c)
 {
-    switch(c)
-    {
-        case '(':
-        case ')':
-        case ',':
-            return 1;
-        default:
-            return 0;
-    }
+    return (c=='(' || c==')' || c==',');
 }
 
-bool isSeparator(const std::string &s)
+bool isComma(const std::string &s)
 {
-    return (s=="(" ||
-            s==")" ||
-            s==",");
+    return s==",";
 }
 
-bool isLeftParan(const char &c)
-{
-    return c=='(';
-}
-
-bool isLeftParan(const std::string &s)
+bool isLeftParan(const std::stirng &s)
 {
     return s=="(";
-}
-
-bool isRightParan(const char &c)
-{
-    return c==')';
 }
 
 bool isRightParan(const std::string &s)
 {
     return s==")";
+}
+
+bool isOperator(const std::string &s)
+{
+    std::string b=s;
+    toLower(b);
+    return (b=="+" ||
+            b=="-" ||
+            b=="*" ||
+            b=="/" ||
+            b=="\\" ||
+            b=="=" ||
+            b=="<" ||
+            b=="<=" ||
+            b==">" ||
+            b==">=" ||
+            b=="<>" ||
+            b=="or" ||
+            b=="and" ||
+            b=="mod" ||
+            b=="not" ||
+            b=="xor");
 }
 
 bool isFunction(const std::string &s)
@@ -151,130 +90,106 @@ bool isFunction(const std::string &s)
 void putInfixQueue(std::string &expression,Queue &infixQ)
 {
     const unsigned int len=expression.size();
-    unsigned i=0;
-    std::string aux;
+    std::string token;
+    unsigned int i=0;
     for(;i<len;)
     {
+        if(isSeparator(expression[i]))
+        {
+            token=expression.substr(i,1);
+            infixQ.push(token);
+            ++i;
+            continue;
+        }
+
         if(isspace(expression[i]))
         {
             ++i;
             continue;
         }
 
-        if(isSeparator(expression[i]))
+        unsigned int j=i+1;
+        while(j<len && isalnum(expression[j]))
+            ++j;
+
+        token=expression.substr(i,j-i);
+
+        infixQ.push(token);
+        i=j;
+    }
+}
+
+void makePostQueue(Queue &infixQ, Queue &postQ)
+{
+    SStack operatorStack;
+    bool lastNumber=false;
+    while(!infixQ.isEmpty())
+    {
+        std::string token=infixQ.front();
+
+        if(isComma(token))
         {
-            aux=expression.substr(i,1);
-            infixQ.push(aux);
-            ++i;
+            infixQ.pop();
+            lastNumber=true;
             continue;
         }
 
-        if(isLeftOperator(expression[i]))
+        if(isLeftParan(token))
         {
-            if(!isLetterOperator(expression[i]))
-            {
-                if(!isRightOperator(expression[i+1]))
-                {
-                    aux=expression.substr(i,1);
-                    infixQ.push(aux);
-                    ++i;
-                    continue;
-                }
-                else
-                {
-                    aux=expression.substr(i,2);
-                    infixQ.push(aux);
-                    i+=2;
-                    continue;
-                }
-            }
-            else
-            {
-                if(expression[i]=='o')
-                {
-                    if(i+1<len)
-                        if(expression[i+1]=='r')
-                            if(i+2<len)
-                                if(isspace(expression[i+2]))
-                                {
-                                    aux=expression.substr(i,2);
-                                    infixQ.push(aux);
-                                    i+=2;
-                                    continue;
-                                }
-                }
-                else
-                    if(expression[i]=='a')
-                    {
-                        if(i+1<len)
-                            if(expression[i+1]=='n')
-                                if(i+2<len)
-                                    if(expression[i+2]=='d')
-                                        if(i+3<len)
-                                            if(isspace(expression[i+3]))
-                                            {
-                                                aux=expression.substr(i,3);
-                                                infixQ.push(aux);
-                                                i+=3;
-                                                continue;
-                                            }
-                    }
-                    else
-                        if(expression[i]=='m')
-                        {
-                            if(i+1<len)
-                                if(expression[i+1]=='o')
-                                    if(i+2<len)
-                                        if(expression[i+2]=='d')
-                                            if(i+3<len)
-                                                if(isspace(expression[i+3]))
-                                                {
-                                                    aux=expression.substr(i,3);
-                                                    infixQ.push(aux);
-                                                    i+=3;
-                                                    continue;
-                                                }
-                        }
-                        else
-                            if(expression[i]=='n')
-                            {
-                                if(i+1<len)
-                                    if(expression[i+1]=='o')
-                                        if(i+2<len)
-                                            if(expression[i+2]=='t')
-                                                if(i+3<len)
-                                                    if(isspace(expression[i+3]))
-                                                    {
-                                                        aux=expression.substr(i,3);
-                                                        infixQ.push(aux);
-                                                        i+=3;
-                                                        continue;
-                                                    }
-                            } else
-                                if(expression[i]=='x')
-                                {
-                                    if(i+1<len)
-                                        if(expression[i+1]=='o')
-                                            if(i+2<len)
-                                                if(expression[i+2]=='r')
-                                                    if(i+3<len)
-                                                        if(isspace(expression[i+3]))
-                                                        {
-                                                            aux=expression.substr(i,3);
-                                                            infixQ.push(aux);
-                                                            i+=3;
-                                                            continue;
-                                                        }
-                                }
-            }
+            operatorStack.push(token);
+            infixQ.pop();
+            lastNumber=false;
+            continue;
         }
 
-        //TODO !operator, !separator, alteceva;
-        unsigned j=i+1;
-        while(j<len)
+        if(isRightParan(token))
         {
-            if(isSeparator(expression[j]))
-                break;
+            while(operatorStack.top()!="(")
+            {
+                postQ.push(operatorStack.top());
+                operatorStack.pop();
+            }
+
+            operatorStack.pop();
+            infixQ.pop();
+            if(!operatorStack.isEmpty())
+                if(isFunction(operatorStack.top()))
+                {
+                    postQ.push(operatorStack.top());
+                    operatorStack.pop();
+                }
+            lastNumber=true;
+            continue;
+        }
+
+        if(isFunction(token))
+        {
+            operatorStack.push(token);
+            lastNumber=false;
+            infixQ.pop();
+            continue;
+        }
+
+        if(!isOperator(token))
+        {
+            postQ.push(token);
+            infixQ.pop();
+            lastNumber=true;
+            continue;
+        }
+
+        if(token[0]=='-' && !lastNumber)
+        {
+            operatorStack.push("neg");
+            infixQ.pop();
+            lastNumber=false;
+            continue;
+        }
+
+        if(token[0]=='+' && !lastNumber)
+        {
+            lastNumber= false;
+            continue;
         }
     }
 }
