@@ -34,6 +34,9 @@ bool inStruct(struct variabile a[],unsigned int &len,std::string nume,unsigned i
 void toLower(std::string &s);
 
 bool isSeparator(const char &c);
+bool isLeftOperator(const char &c);
+bool isRightOperator(const char &c);
+
 
 bool isComma(const std::string &s);
 bool isLeftParan(const std::string &s);

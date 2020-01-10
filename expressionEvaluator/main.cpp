@@ -3,13 +3,14 @@
 
 
 extern variabile var[1000];
-std::string s="a+b";
+std::string s="5 # 6";
 struct Queue infixQ,postQ;
 int main() {
-    std::cin>>x;
+    //std::cin>>x;
     std::cout<<"\n\n\n\n";
     putInfixQueue(s,infixQ);
     if(userVariables)
+
     {
         for(unsigned int i=0;i<lungimeVal;++i)
         {

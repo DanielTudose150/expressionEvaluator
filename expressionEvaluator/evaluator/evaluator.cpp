@@ -45,14 +45,15 @@ bool isSeparator(const char &c)
     return (c=='(' || c==')' || c==',');
 }
 
-bool isLeftParan(const char &c)
+
+bool isLeftOperator(const char &c)
 {
-    return c=='(';
+    return (c=='<' || c=='>');
 }
 
-bool isRightParan(const char &c)
+bool isRightOperator(const char &c)
 {
-    return c==')';
+    return (c=='<' || c=='>');
 }
 
 bool isComma(const std::string &s)
@@ -189,10 +190,22 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
 
         if(!isalnum(expression[i]))
         {
-            token=expression.substr(i,1);
-            infixQ.push(token);
-            ++i;
-            continue;
+            if(isLeftOperator(expression[i])) {
+                if (isRightOperator(expression[i + 1])) {
+                    token = expression.substr(i, 2);
+                    infixQ.push(token);
+                    i += 2;
+                    continue;
+                }
+            } else{
+
+                token=expression.substr(i,1);
+                if(token=="#")
+                    token="<>";
+                infixQ.push(token);
+                ++i;
+                continue;
+            }
         }
 
         unsigned int j=i+1;
