@@ -1,14 +1,26 @@
 #include <iostream>
 #include "evaluator/evaluator.h"
 
-std::string s="a+ b - sin(c) and10";
-struct Queue coada;
+
+extern variabile var[1000];
+std::string s="a+b";
+struct Queue infixQ,postQ;
 int main() {
-    putInfixQueue(s,coada);
-    while(!coada.isEmpty())
+    std::cin>>x;
+    std::cout<<"\n\n\n\n";
+    putInfixQueue(s,infixQ);
+    if(userVariables)
     {
-        std::cout<<coada.front()<<'\n';
-        coada.pop();
+        for(unsigned int i=0;i<lungimeVal;++i)
+        {
+            std::cout<<var[i].name<<"= ";
+            std::cin>>userVar;
+            var[i].value=userVar;
+            std::cout<<'\n';
+        }
     }
+    std::cout<<'\n';
+    makePostQueue(infixQ,postQ);
+    std::cout<<valueQueue(postQ);
     return 0;
 }
