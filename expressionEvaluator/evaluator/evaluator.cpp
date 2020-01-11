@@ -139,7 +139,9 @@ bool isFunction(const std::string &s)
             b=="sqrt" ||
             b=="tan" ||
             b=="tanh" ||
-            b=="truncate");
+            b=="truncate" ||
+            b=="log_u" ||
+            b=="log_b");
 }
 
 bool isLog(const std::string &s)
@@ -159,7 +161,8 @@ bool isBinaryFunction(const std::string &s)
             b=="ieeeremainder" ||
             b=="max" ||
             b=="min" ||
-            b=="pow");
+            b=="pow" ||
+            b=="log_b");
 }
 
 unsigned short operatorPrio(const std::string &s)
@@ -199,6 +202,8 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
             continue;
         }
 
+
+
         if(isspace(expression[i]))
         {
             ++i;
@@ -226,8 +231,21 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
         }
 
         unsigned int j=i+1;
-        while(j<len && isalnum(expression[j]))
+        while(j<len)
+        {
+            if(expression[j]=='.')
+            {
+                ++j;
+                continue;
+            }
+
+            if(!isalnum(expression[j]))
+            {
+                break;
+            }
+
             ++j;
+        }
 
         token=expression.substr(i,j-i);
 
@@ -236,16 +254,23 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
             if(token!="E")
                 token=toConstant(token);
         }
-        if(!isFunction(token))
-            if(!isdigit(token[0]))
-            {
-                if(token!="x") {
+        if(!isFunction(token)) {
+            if (!isdigit(token[0])) {
+                if (token != "x") {
                     if (!inStruct(var, lungimeVal, token, pozV)) {
                         push(var, token, lungimeVal);
                         userVariables = 1;
                     }
                 }
             }
+        } else {
+            if (isLog(token)) {
+                if (expression[i+3] == '(') {
+                    std::string aux = expression.substr(i, expression.size() - i + 1);
+                    token = logType(aux);
+                }
+            }
+        }
         infixQ.push(token);
         i=j;
     }
@@ -300,11 +325,6 @@ void makePostQueue(Queue &infixQ, Queue &postQ)
             lastNumber=false;
             infixQ.pop();
             continue;
-
-            /*if(isLog(token))
-            {
-
-            }*/
         }
 
         if(!isOperator(token))
@@ -384,7 +404,7 @@ double stringToDouble(std::string &s)
     {
         x=x*10+(double)(s[i]-48);
     }
-    return x;
+    return (double)(int)x;
 }
 
 double stringToDoubleFull(std::string &s)
@@ -500,7 +520,7 @@ double valueQueue(Queue postQ)
 
 double valueFunction(const std::string &s,double t1,double t2)
 {
-    double rez;
+    double rez=0;
     std::string b=s;
     toLower(b);
     if(b=="abs")
@@ -592,7 +612,7 @@ double valueFunction(const std::string &s,double t1,double t2)
         rez=t1-t2*round(t1/t2);
     }
 
-    if(b=="log")
+    if(b=="log_u")
     {
         if(t1<=0)
         {
@@ -762,6 +782,11 @@ double valueFunction(const std::string &s,double t1,double t2)
         rez=(int)t1^(int)t2;
     }
 
+    if(b=="log_b")
+    {
+        rez=log(t1)/log(t2);
+    }
+
     return rez;
 }
 
@@ -772,7 +797,7 @@ bool isX(const std::string &s)
     return (b=="x");
 }
 
-std::string toConstant(std::string &s)
+std::string toConstant(std::string s)
 {
     std::string b=s;
     toLower(b);
@@ -789,4 +814,116 @@ std::string toConstant(std::string &s)
     if(b=="false")
         b="0";
     return b;
+}
+
+bool isMulfPiOn2(double t)
+{
+    std::string aux="pi";
+    aux=toConstant(aux);
+    double piF=stringToDoubleFull(aux);
+    piF/=2;
+    return (piF==t);
+}
+
+std::string logType(std::string token)
+{
+    unsigned int paranthesis=1;
+    unsigned int commas=0;
+    unsigned int paranSets=1;
+    const unsigned int len=token.size();
+
+    for(unsigned int i=4;i<len;++i)
+    {
+        if(paranthesis==0)
+            break;
+        if(token[i]=='(')
+        {
+            ++paranthesis;
+            ++paranSets;
+        }
+        if(token[i]==')')
+        {
+            --paranthesis;
+        }
+        if(token[i]==',')
+            commas++;
+    }
+
+    if(commas==paranSets)
+        return "log_b";
+    if(commas==0)
+        return "log_u";
+    std::string aux=token.substr(4,token.size()-3);
+    if(!hasLog(aux)) {
+        if (!hasBinaryFunction(aux))
+            return "log_b";
+        unsigned int nr = noBinaryFunctions(aux);
+        if (nr < commas)
+            return "log_b";
+        else
+            return "log_u";
+    }else{
+
+        unsigned int poz=findLog(aux);
+        std::string aux2=aux.substr(poz,aux.size()-poz+1);
+        std::string logType2=logType(aux2);
+        if(logType2=="log_u")
+            return "log_b";
+        return "log_u";
+
+    }
+}
+
+bool hasLog(std::string s)
+{
+    toLower(s);
+    unsigned int poz=s.find("log");
+    if(poz==s.npos)
+        return 0;
+    if(s[poz+3]=='(')
+        return 1;
+}
+
+
+bool hasBinaryFunction(std::string token)
+{
+    toLower(token);
+    std::string binF[]={"atan2","bigmul","divrem","ieeeremainder","max","min","pow"};
+    for(unsigned int i=0;i<7;++i)
+    {
+        if(token.find(binF[i])!=token.npos)
+            return 1;
+    }
+    return 0;
+}
+
+
+unsigned int noBinaryFunctions(std::string token)
+{
+    toLower(token);
+    unsigned int nr=0;
+    std::string binF[]={"atan2","bigmul","divrem","ieeeremainder","max","min","pow"};
+    for(unsigned int i=0;i<7;++i)
+    {
+        unsigned int poz=token.find(binF[i]);
+        while(poz!=token.npos)
+        {
+            ++nr;
+            poz=token.find(binF[i],poz+binF[i].size());
+        }
+    }
+
+    return nr;
+}
+
+unsigned int findLog(std::string token)
+{
+    toLower(token);
+    unsigned int poz=token.find("log");
+    while(poz!=token.npos)
+    {
+        if(token[3]=='(')
+            return poz;
+        poz=token.find("log",3);
+    }
 }

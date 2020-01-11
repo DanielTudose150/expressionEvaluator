@@ -13,6 +13,7 @@
 #include <cmath>
 #include <algorithm>
 
+
 extern unsigned lungimeVal;
 extern bool userVariables;
 extern unsigned int pozV;
@@ -48,6 +49,7 @@ bool isOperator(const std::string &s);
 
 
 bool isCosntant(const std::string &s);
+bool isLog(const std::string &s);
 bool isFunction(const std::string &s);
 bool isBinaryFunction(const std::string &s);
 
@@ -62,7 +64,13 @@ double stringToDoubleFull(std::string &s);
 double valueQueue(Queue postQ);
 double valueFunction(const std::string &s,double t1,double t2=0);
 
-std::string toConstant(std::string &s);
-bool isMultipleOfPi(std::string &s);
+std::string toConstant(std::string s);
+bool isMulfPiOn2(double t);
+
+std::string logType(std::string token);
+bool hasLog(std::string s);
+bool hasBinaryFunction(std::string token);
+unsigned int noBinaryFunctions(std::string token);
+unsigned int findLog(std::string token);
 
 #endif //EXPRESSIONEVALUATOR_EVALUATOR_H

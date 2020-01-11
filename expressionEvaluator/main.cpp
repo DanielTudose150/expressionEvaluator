@@ -3,11 +3,11 @@
 
 
 extern variabile var[1000];
-std::string s="pow(2,10)*10+sin(pi)+cos(pi/2)";
+std::string s="log(e)";
 struct Queue infixQ,postQ;
 int main() {
     //std::cin>>x;
-    std::cout<<"\n\n\n\n";
+
     putInfixQueue(s,infixQ);
     if(userVariables)
 
@@ -20,6 +20,7 @@ int main() {
             std::cout<<'\n';
         }
     }
+    std::cout<<"\n\n\n\n";
     std::cout<<'\n';
     makePostQueue(infixQ,postQ);
     std::cout<<valueQueue(postQ);
