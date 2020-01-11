@@ -530,23 +530,11 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="acos")
     {
-        if(!(t1>=-1.0 && t1<=1.0))
-        {
-            hasError=1;
-            errorType="Invalid argument for acos";
-            exit(0);
-        }
         rez=acos(t1);
     }
 
     if(b=="asin")
     {
-        if(!(t1>=-1.0 && t1<=1.0))
-        {
-            hasError=1;
-            errorType="Invalid argument for asin";
-            exit(0);
-        }
         rez=asin(t1);
     }
 
@@ -557,12 +545,6 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="atan2")
     {
-        if(t2==0)
-        {
-            hasError=1;
-            errorType="Invalid argument. Division by 0 in atan2";
-            exit(0);
-        }
         rez=atan2(t1,t2);
     }
 
@@ -588,12 +570,6 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="divrem")
     {
-        if(t2==0)
-        {
-            hasError=1;
-            errorType="Division by 0 in divrem";
-            exit(0);
-        }
         rez=t1/t2;
     }
 
@@ -614,23 +590,11 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="log_u")
     {
-        if(t1<=0)
-        {
-            hasError=1;
-            errorType="Negative argument for log";
-            exit(0);
-        }
         rez=log(t1);
     }
 
     if(b=="log10")
     {
-        if(t1<=0)
-        {
-            hasError=1;
-            errorType="Negative argument for log";
-            exit(0);
-        }
         rez=log10(t1);
     }
 
@@ -646,12 +610,6 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="pow")
     {
-        if(t1==t2 && t1==0)
-        {
-            hasError=1;
-            errorType="pow(0,0) not defined";
-            exit(0);
-        }
         rez=pow(t1,t2);
     }
 
@@ -677,12 +635,7 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="sqrt")
     {
-        if(t1<0)
-        {
-            hasError=1;
-            errorType="Negative square root";
-            exit(0);
-        }
+
         rez=sqrt(t1);
     }
 
