@@ -14,6 +14,7 @@
     <list default="true" id="6c677648-861d-4973-9c02-81ade03fc584" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluator/evaluator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/evaluator/evaluator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluator/evaluator.h" beforeDir="false" afterPath="$PROJECT_DIR$/evaluator/evaluator.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +113,9 @@
       <workItem from="1578738459058" duration="1075000" />
       <workItem from="1578740169454" duration="9233000" />
       <workItem from="1578752722065" duration="246000" />
+      <workItem from="1578771436540" duration="223000" />
+      <workItem from="1578771758150" duration="6000" />
+      <workItem from="1578771790625" duration="155000" />
     </task>
     <servers />
   </component>

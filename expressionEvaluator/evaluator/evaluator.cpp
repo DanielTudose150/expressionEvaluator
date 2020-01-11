@@ -249,11 +249,7 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
 
         token=expression.substr(i,j-i);
 
-        if(isCosntant(token))
-        {
-            if(token!="E")
-                token=toConstant(token);
-        }
+
         if(!isFunction(token)) {
             if (!isdigit(token[0])) {
                 if (token != "x") {
@@ -441,6 +437,14 @@ double valueQueue(Queue postQ)
     while(!postQ.isEmpty())
     {
         std::string token=postQ.front();
+
+        if(isCosntant(token))
+        {
+            if(token!="E")
+            {
+                double t=toConstant(token);
+            }
+        }
 
         if(token=="x")
         {
@@ -750,23 +754,22 @@ bool isX(const std::string &s)
     return (b=="x");
 }
 
-std::string toConstant(std::string s)
+double toConstant(std::string s)
 {
     std::string b=s;
     toLower(b);
     if(b=="e")
-        b="2.7182818";
+        return 2.7182818;
     if(b=="c")
-        b="0.5772156";
+        return 0.5772156;
     if(b=="pi")
-        b="3.1415926";
+        return 3.1415926;
     if(b=="tau")
-        b="6.2831853";
+        return 6.2831853;
     if(b=="true")
-        b="1";
+        return 1;
     if(b=="false")
-        b="0";
-    return b;
+        return 0;
 }
 
 bool isMulfPiOn2(double t)

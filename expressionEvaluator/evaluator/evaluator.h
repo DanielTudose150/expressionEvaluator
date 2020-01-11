@@ -64,7 +64,7 @@ double stringToDoubleFull(std::string &s);
 double valueQueue(Queue postQ);
 double valueFunction(const std::string &s,double t1,double t2=0);
 
-std::string toConstant(std::string s);
+double toConstant(std::string s);
 bool isMulfPiOn2(double t);
 
 std::string logType(std::string token);
