@@ -3,7 +3,7 @@
 
 
 extern variabile var[1000];
-std::string s="5 # 6";
+std::string s="pow(2,10)*10+sin(pi)+cos(pi/2)";
 struct Queue infixQ,postQ;
 int main() {
     //std::cin>>x;

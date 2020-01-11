@@ -11,6 +11,9 @@ bool userVariables=false;
 unsigned int pozV;
 double userVar;
 double x;
+bool hasError;
+std::string errorType;
+
 
 void push(struct variabile a[],std::string nume,unsigned int &i)
 {
@@ -92,6 +95,20 @@ bool isOperator(const std::string &s)
             b=="not" ||
             b=="xor");
 }
+
+bool isCosntant(const std::string &s)
+{
+    std::string b=s;
+    toLower(b);
+    return (b=="e" ||
+            b=="c" ||
+            b=="pi" ||
+            b=="tau" ||
+            b=="true" ||
+            b=="false");
+}
+
+
 
 bool isFunction(const std::string &s)
 {
@@ -214,6 +231,11 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
 
         token=expression.substr(i,j-i);
 
+        if(isCosntant(token))
+        {
+            if(token!="E")
+                token=toConstant(token);
+        }
         if(!isFunction(token))
             if(!isdigit(token[0]))
             {
@@ -488,11 +510,23 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="acos")
     {
+        if(!(t1>=-1.0 && t1<=1.0))
+        {
+            hasError=1;
+            errorType="Invalid argument for acos";
+            exit(0);
+        }
         rez=acos(t1);
     }
 
     if(b=="asin")
     {
+        if(!(t1>=-1.0 && t1<=1.0))
+        {
+            hasError=1;
+            errorType="Invalid argument for asin";
+            exit(0);
+        }
         rez=asin(t1);
     }
 
@@ -503,6 +537,12 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="atan2")
     {
+        if(t2==0)
+        {
+            hasError=1;
+            errorType="Invalid argument. Division by 0 in atan2";
+            exit(0);
+        }
         rez=atan2(t1,t2);
     }
 
@@ -528,6 +568,12 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="divrem")
     {
+        if(t2==0)
+        {
+            hasError=1;
+            errorType="Division by 0 in divrem";
+            exit(0);
+        }
         rez=t1/t2;
     }
 
@@ -548,11 +594,23 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="log")
     {
+        if(t1<=0)
+        {
+            hasError=1;
+            errorType="Negative argument for log";
+            exit(0);
+        }
         rez=log(t1);
     }
 
     if(b=="log10")
     {
+        if(t1<=0)
+        {
+            hasError=1;
+            errorType="Negative argument for log";
+            exit(0);
+        }
         rez=log10(t1);
     }
 
@@ -568,6 +626,12 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="pow")
     {
+        if(t1==t2 && t1==0)
+        {
+            hasError=1;
+            errorType="pow(0,0) not defined";
+            exit(0);
+        }
         rez=pow(t1,t2);
     }
 
@@ -593,11 +657,18 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="sqrt")
     {
+        if(t1<0)
+        {
+            hasError=1;
+            errorType="Negative square root";
+            exit(0);
+        }
         rez=sqrt(t1);
     }
 
     if(b=="tan")
     {
+
         rez=tan(t1);
     }
 
@@ -699,4 +770,23 @@ bool isX(const std::string &s)
     std::string b=s;
     toLower(b);
     return (b=="x");
+}
+
+std::string toConstant(std::string &s)
+{
+    std::string b=s;
+    toLower(b);
+    if(b=="e")
+        b="2.7182818";
+    if(b=="c")
+        b="0.5772156";
+    if(b=="pi")
+        b="3.1415926";
+    if(b=="tau")
+        b="6.2831853";
+    if(b=="true")
+        b="1";
+    if(b=="false")
+        b="0";
+    return b;
 }

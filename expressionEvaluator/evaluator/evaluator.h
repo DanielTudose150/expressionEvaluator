@@ -19,6 +19,9 @@ extern unsigned int pozV;
 extern double userVar;
 extern double x;
 
+extern bool hasError;
+extern std::string errorType;
+
 struct variabile{
 
     std::string name;
@@ -44,6 +47,7 @@ bool isRightParan(const std::string &s);
 bool isOperator(const std::string &s);
 
 
+bool isCosntant(const std::string &s);
 bool isFunction(const std::string &s);
 bool isBinaryFunction(const std::string &s);
 
@@ -58,5 +62,7 @@ double stringToDoubleFull(std::string &s);
 double valueQueue(Queue postQ);
 double valueFunction(const std::string &s,double t1,double t2=0);
 
+std::string toConstant(std::string &s);
+bool isMultipleOfPi(std::string &s);
 
 #endif //EXPRESSIONEVALUATOR_EVALUATOR_H
