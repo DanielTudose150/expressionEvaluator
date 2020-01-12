@@ -1,4 +1,4 @@
-# Install script for directory: C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator
+# Install script for directory: C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/WID/CLion - Projects/expressionEvaluation/expressionEvaluator/expressionEvaluator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
