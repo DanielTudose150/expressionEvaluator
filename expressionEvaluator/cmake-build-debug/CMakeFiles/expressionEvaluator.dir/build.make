@@ -42,10 +42,10 @@ RM = "C:\WID\Apps\CLion\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator"
+CMAKE_SOURCE_DIR = "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/expressionEvaluator.dir/depend.make
@@ -58,68 +58,68 @@ include CMakeFiles/expressionEvaluator.dir/flags.make
 
 CMakeFiles/expressionEvaluator.dir/main.cpp.obj: CMakeFiles/expressionEvaluator.dir/flags.make
 CMakeFiles/expressionEvaluator.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/expressionEvaluator.dir/main.cpp.obj"
-	C:\WID\Apps\MinGWBun\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\main.cpp.obj -c "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/expressionEvaluator.dir/main.cpp.obj"
+	C:\WID\Apps\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\main.cpp.obj -c "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\main.cpp"
 
 CMakeFiles/expressionEvaluator.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/expressionEvaluator.dir/main.cpp.i"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\main.cpp" > CMakeFiles\expressionEvaluator.dir\main.cpp.i
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\main.cpp" > CMakeFiles\expressionEvaluator.dir\main.cpp.i
 
 CMakeFiles/expressionEvaluator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/expressionEvaluator.dir/main.cpp.s"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\main.cpp" -o CMakeFiles\expressionEvaluator.dir\main.cpp.s
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\main.cpp" -o CMakeFiles\expressionEvaluator.dir\main.cpp.s
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj: CMakeFiles/expressionEvaluator.dir/flags.make
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj: ../tipuri/stivaDouble.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj"
-	C:\WID\Apps\MinGWBun\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.obj -c "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.obj"
+	C:\WID\Apps\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.obj -c "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp"
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.i"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.i
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.i
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/expressionEvaluator.dir/tipuri/stivaDouble.cpp.s"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.s
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaDouble.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaDouble.cpp.s
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj: CMakeFiles/expressionEvaluator.dir/flags.make
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj: ../tipuri/stivaString.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj"
-	C:\WID\Apps\MinGWBun\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.obj -c "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.obj"
+	C:\WID\Apps\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.obj -c "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp"
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.i"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.i
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.i
 
 CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/expressionEvaluator.dir/tipuri/stivaString.cpp.s"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.s
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\stivaString.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\stivaString.cpp.s
 
 CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj: CMakeFiles/expressionEvaluator.dir/flags.make
 CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj: ../tipuri/coada.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj"
-	C:\WID\Apps\MinGWBun\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.obj -c "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.obj"
+	C:\WID\Apps\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.obj -c "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp"
 
 CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.i"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.i
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp" > CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.i
 
 CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/expressionEvaluator.dir/tipuri/coada.cpp.s"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.s
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\tipuri\coada.cpp" -o CMakeFiles\expressionEvaluator.dir\tipuri\coada.cpp.s
 
 CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj: CMakeFiles/expressionEvaluator.dir/flags.make
 CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj: ../evaluator/evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj"
-	C:\WID\Apps\MinGWBun\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.obj -c "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.obj"
+	C:\WID\Apps\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.obj -c "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp"
 
 CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.i"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp" > CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.i
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp" > CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.i
 
 CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/expressionEvaluator.dir/evaluator/evaluator.cpp.s"
-	C:\WID\Apps\MinGWBun\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp" -o CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.s
+	C:\WID\Apps\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\evaluator\evaluator.cpp" -o CMakeFiles\expressionEvaluator.dir\evaluator\evaluator.cpp.s
 
 # Object files for target expressionEvaluator
 expressionEvaluator_OBJECTS = \
@@ -141,7 +141,7 @@ expressionEvaluator.exe: CMakeFiles/expressionEvaluator.dir/build.make
 expressionEvaluator.exe: CMakeFiles/expressionEvaluator.dir/linklibs.rsp
 expressionEvaluator.exe: CMakeFiles/expressionEvaluator.dir/objects1.rsp
 expressionEvaluator.exe: CMakeFiles/expressionEvaluator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable expressionEvaluator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable expressionEvaluator.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\expressionEvaluator.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +154,6 @@ CMakeFiles/expressionEvaluator.dir/clean:
 .PHONY : CMakeFiles/expressionEvaluator.dir/clean
 
 CMakeFiles/expressionEvaluator.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator" "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator" "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug" "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug" "C:\WID\IP - Proiect Bun\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles\expressionEvaluator.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator" "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator" "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug" "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug" "C:\WID\IP - Proiect v2\expressionEvaluator\expressionEvaluator\cmake-build-debug\CMakeFiles\expressionEvaluator.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/expressionEvaluator.dir/depend
 

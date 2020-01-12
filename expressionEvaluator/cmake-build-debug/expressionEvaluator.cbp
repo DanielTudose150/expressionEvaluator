@@ -8,112 +8,112 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
+				<Option working_dir="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
+				<Option working_dir="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="expressionEvaluator">
-				<Option output="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/expressionEvaluator.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
+				<Option output="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/expressionEvaluator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 expressionEvaluator"/>
-					<CompileFile command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 expressionEvaluator"/>
+					<CompileFile command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="expressionEvaluator/fast">
-				<Option output="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/expressionEvaluator.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
+				<Option output="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/expressionEvaluator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="c:\wid\apps\mingwbun\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\wid\apps\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 expressionEvaluator/fast"/>
-					<CompileFile command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 expressionEvaluator/fast"/>
+					<CompileFile command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
+				<Option working_dir="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/WID/Apps/MinGWBun/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/WID/Apps/MinGW/bin/mingw32-make.exe -f &quot;C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/evaluator/evaluator.cpp">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/evaluator/evaluator.cpp">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/evaluator/evaluator.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/evaluator/evaluator.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/main.cpp">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/main.cpp">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/coada.cpp">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/coada.cpp">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/coada.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/coada.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/listeDouble.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/listeDouble.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/listeString.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/listeString.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.cpp">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.cpp">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/stivaDouble.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaString.cpp">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/stivaString.cpp">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/tipuri/stivaString.h">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/stivaString.h">
 			<Option target="expressionEvaluator"/>
 		</Unit>
-		<Unit filename="C:/WID/IP - Proiect Bun/expressionEvaluator/expressionEvaluator/CMakeLists.txt">
+		<Unit filename="C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

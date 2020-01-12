@@ -11,6 +11,7 @@ bool userVariables=false;
 unsigned int pozV;
 double userVar;
 double x;
+unsigned int binLogs;
 bool hasError;
 std::string errorType;
 
@@ -268,7 +269,8 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
             if (isLog(token)) {
                 if (expression[i+3] == '(') {
                     std::string aux = expression.substr(i, expression.size() - i + 1);
-                    token = logType(aux);
+                    binLogs=0;
+                    token = logType(aux,binLogs);
                 }
             }
         }
@@ -767,13 +769,13 @@ double toConstant(std::string s)
     std::string b=s;
     toLower(b);
     if(b=="e")
-        return 2.7182818;
+        return 2.718281828459045;
     if(b=="c")
-        return 0.5772156;
+        return 0.577215664901532;
     if(b=="pi")
-        return 3.1415926;
+        return 3.141592653589793;
     if(b=="tau")
-        return 6.2831853;
+        return 6.283185307179586;
     if(b=="true")
         return 1;
     if(b=="false")
@@ -789,7 +791,7 @@ bool isMulfPiOn2(double t)
     return (piF==t);
 }
 
-std::string logType(std::string token)
+std::string logType(std::string token,unsigned int &binLogs)
 {
     unsigned int paranthesis=1;
     unsigned int commas=0;
@@ -814,24 +816,48 @@ std::string logType(std::string token)
     }
 
     if(commas==paranSets)
+    {
+        ++binLogs;
         return "log_b";
+    }
     if(commas==0)
         return "log_u";
     std::string aux=token.substr(4,token.size()-3);
     if(!hasLog(aux)) {
         if (!hasBinaryFunction(aux))
+        {
+            ++binLogs;
             return "log_b";
+        }
         unsigned int nr = noBinaryFunctions(aux);
         if (nr < commas)
+        {
+            ++binLogs;
             return "log_b";
+        }
         else
             return "log_u";
     }else{
 
-        unsigned int poz=findLog(aux);
-        std::string aux2=aux.substr(poz,aux.size()-poz+1);
-        std::string logType2=logType(aux2);
+        unsigned int binF=noBinaryFunctions(aux);
+        std::string token2=logType(aux,binLogs);
+        if(token2=="lob_b")
+            ++binLogs;
+        binF+=binLogs;
 
+        if(binF==0)
+        {
+            ++binLogs;
+            return "log_b";
+        }
+
+        if(binF < commas)
+        {
+            ++binLogs;
+            return "log_b";
+        }
+
+        return "log_u";
     }
 }
 

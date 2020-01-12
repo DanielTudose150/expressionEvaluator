@@ -23,6 +23,8 @@ extern double x;
 extern bool hasError;
 extern std::string errorType;
 
+extern unsigned int binLogs;
+
 struct variabile{
 
     std::string name;
@@ -67,7 +69,7 @@ double valueFunction(const std::string &s,double t1,double t2=0);
 double toConstant(std::string s);
 bool isMulfPiOn2(double t);
 
-std::string logType(std::string token);
+std::string logType(std::string token,unsigned int &binLogs);
 bool hasLog(std::string s);
 bool hasBinaryFunction(std::string token);
 unsigned int noBinaryFunctions(std::string token);

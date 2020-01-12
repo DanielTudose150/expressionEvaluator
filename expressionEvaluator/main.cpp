@@ -3,7 +3,7 @@
 
 
 extern variabile var[1000];
-std::string s="log(log(pow(e,2)))";
+std::string s="log(log(pow(e,e)))";
 struct Queue infixQ,postQ;
 int main() {
     //std::cin>>x;
@@ -21,14 +21,10 @@ int main() {
         }
     }
     std::cout<<"\n\n\n\n";
-    std::cout<<'\n';
-    while(!infixQ.isEmpty())
-    {
-        std::cout<<infixQ.front()<<'\n';
-        infixQ.pop();
-    }
-    /*
+
     makePostQueue(infixQ,postQ);
-    std::cout<<valueQueue(postQ);*/
+
+    std::cout<<"\n\n";
+    std::cout<<valueQueue(postQ);
     return 0;
 }
