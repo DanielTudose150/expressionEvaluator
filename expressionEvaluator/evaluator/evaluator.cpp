@@ -203,7 +203,6 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
         }
 
 
-
         if(isspace(expression[i]))
         {
             ++i;
@@ -249,6 +248,12 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
 
         token=expression.substr(i,j-i);
 
+        if(isCosntant(token))
+        {
+            infixQ.push(token);
+            i+=token.size();
+            continue;
+        }
 
         if(!isFunction(token)) {
             if (!isdigit(token[0])) {
@@ -443,6 +448,9 @@ double valueQueue(Queue postQ)
             if(token!="E")
             {
                 double t=toConstant(token);
+                valueStack.push(t);
+                postQ.pop();
+                continue;
             }
         }
 
@@ -823,9 +831,6 @@ std::string logType(std::string token)
         unsigned int poz=findLog(aux);
         std::string aux2=aux.substr(poz,aux.size()-poz+1);
         std::string logType2=logType(aux2);
-        if(logType2=="log_u")
-            return "log_b";
-        return "log_u";
 
     }
 }
