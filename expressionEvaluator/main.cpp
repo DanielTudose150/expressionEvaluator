@@ -3,12 +3,18 @@
 
 
 extern variabile var[1000];
-std::string s="log(log(pow(e,e)))";
+std::string s="log(0)";
 struct Queue infixQ,postQ;
 int main() {
     //std::cin>>x;
-
+    //errorHandle("masini");
+    readTexts(1);
     putInfixQueue(s,infixQ);
+    if(hasError)
+    {
+        std::cout<<"are erori";
+        return 0;
+    }
     if(userVariables)
 
     {

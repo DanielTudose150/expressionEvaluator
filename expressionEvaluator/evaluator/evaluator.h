@@ -12,6 +12,10 @@
 #include <cctype>
 #include <cmath>
 #include <algorithm>
+#include <fstream>
+#include <cstdlib>
+
+#include <iostream>
 
 
 extern unsigned lungimeVal;
@@ -21,7 +25,6 @@ extern double userVar;
 extern double x;
 
 extern bool hasError;
-extern std::string errorType;
 
 extern unsigned int binLogs;
 
@@ -33,6 +36,11 @@ struct variabile{
 
     variabile() : isAssigned(0) { }
 };
+
+extern std::string texts[5];
+
+extern char lang;
+void readTexts(unsigned char lang);
 
 void push(struct variabile a[],std::string nume,unsigned int &i);
 bool inStruct(struct variabile a[],unsigned int &len,std::string nume,unsigned int &poz);
@@ -74,5 +82,10 @@ bool hasLog(std::string s);
 bool hasBinaryFunction(std::string token);
 unsigned int noBinaryFunctions(std::string token);
 unsigned int findLog(std::string token);
+
+void errorHandle(std::string &errorType);
+bool correctParan(std::string text);
+
+
 
 #endif //EXPRESSIONEVALUATOR_EVALUATOR_H

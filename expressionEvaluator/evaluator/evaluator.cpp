@@ -13,8 +13,58 @@ double userVar;
 double x;
 unsigned int binLogs;
 bool hasError;
-std::string errorType;
 
+std::string texts[5];
+
+char lang;
+void readTexts(unsigned char lang)
+{
+    unsigned int i=0;
+    switch(lang)
+    {
+        case 1:
+        {
+            std::ifstream fro("../texts/ro.txt");
+            while(getline(fro,texts[i++]));
+            fro.close();
+            break;
+        }
+        case 2: {
+            std::ifstream feng("../texts/eng.txt");
+            while(getline(feng,texts[i++]));
+            feng.close();
+            break;
+        }
+        case 3:
+        {
+            std::ifstream ffra("../texts/fra.txt");
+            while(getline(ffra,texts[i++]));
+            ffra.close();
+            break;
+        }
+        case 4: {
+            std::ifstream fdeu("../texts/deu.txt");
+            while(getline(fdeu,texts[i++]));
+            fdeu.close();
+            break;
+        }
+        case 5: {
+            std::ifstream fita("../texts/ita.txt");
+            while(getline(fita,texts[i++]));
+            fita.close();
+            break;
+        }
+        case 6: {
+            std::ifstream fesp("../texts/esp.txt");
+            while(getline(fesp,texts[i++]));
+            fesp.close();
+            break;
+        }
+        default:
+            return;
+    }
+
+}
 
 void push(struct variabile a[],std::string nume,unsigned int &i)
 {
@@ -190,6 +240,10 @@ unsigned short operatorPrio(const std::string &s)
 
 void putInfixQueue(std::string &expression,Queue &infixQ)
 {
+    if(!correctParan(expression))
+    {
+        errorHandle(texts[3]);
+    }
     const unsigned int len=expression.size();
     std::string token;
     unsigned int i=0;
@@ -559,6 +613,10 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="atan2")
     {
+        if(t2==0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=atan2(t1,t2);
     }
 
@@ -584,6 +642,10 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="divrem")
     {
+        if(t2==0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=t1/t2;
     }
 
@@ -599,16 +661,28 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="ieeeremainder")
     {
+        if(t2==0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=t1-t2*round(t1/t2);
     }
 
     if(b=="log_u")
     {
+        if(t1<=0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=log(t1);
     }
 
     if(b=="log10")
     {
+        if(t1<=0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=log10(t1);
     }
 
@@ -624,6 +698,10 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="pow")
     {
+        if(t1==0 && t2==0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=pow(t1,t2);
     }
 
@@ -649,13 +727,19 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="sqrt")
     {
-
+        if(t1<0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=sqrt(t1);
     }
 
     if(b=="tan")
     {
-
+        if(isMulfPiOn2(t1))
+        {
+            errorHandle(texts[4]);
+        }
         rez=tan(t1);
     }
 
@@ -686,11 +770,15 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="/")
     {
+        if(t2==0)
+            errorHandle(texts[4]);
         rez=t1/t2;
     }
 
     if(b=="\\")
     {
+        if(t2==0)
+            errorHandle(texts[4]);
         rez=(int)(t1/t2);
     }
 
@@ -736,6 +824,10 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="mod")
     {
+        if(t2==0)
+        {
+            errorHandle(texts[4]);
+        }
         rez=t1-t2*(t1/t2);
     }
 
@@ -751,6 +843,10 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="log_b")
     {
+        if(t1<=0)
+            errorHandle(texts[4]);
+        if(t2<=0 || t2==1)
+            errorHandle(texts[4]);
         rez=log(t1)/log(t2);
     }
 
@@ -784,9 +880,8 @@ double toConstant(std::string s)
 
 bool isMulfPiOn2(double t)
 {
-    std::string aux="pi";
-    aux=toConstant(aux);
-    double piF=stringToDoubleFull(aux);
+
+    double piF=toConstant("pi");
     piF/=2;
     return (piF==t);
 }
@@ -913,4 +1008,29 @@ unsigned int findLog(std::string token)
             return poz;
         poz=token.find("log",3);
     }
+}
+
+void errorHandle(std::string &errorType)
+{
+    hasError=true;
+    std::ofstream ferrors("../texts/ERRORS.txt");
+    ferrors<<errorType<<'\n';
+    ferrors.close();
+    return;
+}
+
+bool correctParan(std::string text)
+{
+    const unsigned int len=text.size();
+    signed int paran=0;
+    for(unsigned int i=0;i<len;++i)
+    {
+        if(text[i]=='(')
+            ++paran;
+        if(text[i]==')')
+            --paran;
+    }
+    if(paran==0)
+        return 1;
+    return 0;
 }

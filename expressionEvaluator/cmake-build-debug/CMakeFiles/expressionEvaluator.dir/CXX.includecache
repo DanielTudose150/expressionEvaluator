@@ -23,6 +23,12 @@ cmath
 -
 algorithm
 -
+fstream
+-
+cstdlib
+-
+iostream
+-
 
 C:/WID/IP - Proiect v2/expressionEvaluator/expressionEvaluator/tipuri/coada.h
 string
