@@ -12,59 +12,10 @@ unsigned int pozV;
 double userVar;
 double x;
 unsigned int binLogs;
-bool hasError;
 
-std::string texts[5];
 
-char lang;
-void readTexts(unsigned char lang)
-{
-    unsigned int i=0;
-    switch(lang)
-    {
-        case 1:
-        {
-            std::ifstream fro("../texts/ro.txt");
-            while(getline(fro,texts[i++]));
-            fro.close();
-            break;
-        }
-        case 2: {
-            std::ifstream feng("../texts/eng.txt");
-            while(getline(feng,texts[i++]));
-            feng.close();
-            break;
-        }
-        case 3:
-        {
-            std::ifstream ffra("../texts/fra.txt");
-            while(getline(ffra,texts[i++]));
-            ffra.close();
-            break;
-        }
-        case 4: {
-            std::ifstream fdeu("../texts/deu.txt");
-            while(getline(fdeu,texts[i++]));
-            fdeu.close();
-            break;
-        }
-        case 5: {
-            std::ifstream fita("../texts/ita.txt");
-            while(getline(fita,texts[i++]));
-            fita.close();
-            break;
-        }
-        case 6: {
-            std::ifstream fesp("../texts/esp.txt");
-            while(getline(fesp,texts[i++]));
-            fesp.close();
-            break;
-        }
-        default:
-            return;
-    }
-
-}
+std::string postQueue[1000];
+unsigned int lenPostQueue;
 
 void push(struct variabile a[],std::string nume,unsigned int &i)
 {
@@ -107,7 +58,7 @@ bool isLeftOperator(const char &c)
 
 bool isRightOperator(const char &c)
 {
-    return (c=='<' || c=='>');
+    return (c=='=' || c=='>');
 }
 
 bool isComma(const std::string &s)
@@ -144,7 +95,8 @@ bool isOperator(const std::string &s)
             b=="and" ||
             b=="mod" ||
             b=="not" ||
-            b=="xor");
+            b=="xor" ||
+            b=="neg");
 }
 
 bool isCosntant(const std::string &s)
@@ -240,10 +192,7 @@ unsigned short operatorPrio(const std::string &s)
 
 void putInfixQueue(std::string &expression,Queue &infixQ)
 {
-    if(!correctParan(expression))
-    {
-        errorHandle(texts[3]);
-    }
+
     const unsigned int len=expression.size();
     std::string token;
     unsigned int i=0;
@@ -272,10 +221,19 @@ void putInfixQueue(std::string &expression,Queue &infixQ)
                     infixQ.push(token);
                     i += 2;
                     continue;
+                } else {
+
+                    token = expression.substr(i, 1);
+
+                    infixQ.push(token);
+                    ++i;
+                    continue;
                 }
-            } else{
+            } else
+            {
 
                 token=expression.substr(i,1);
+
                 if(token=="#")
                     token="<>";
                 infixQ.push(token);
@@ -495,9 +453,9 @@ double valueQueue(Queue postQ)
     DStack valueStack;
     double rez;
 
-    while(!postQ.isEmpty())
+    for(unsigned int i=0;i<lenPostQueue;)
     {
-        std::string token=postQ.front();
+        std::string token=postQueue[i];
 
         if(isCosntant(token))
         {
@@ -505,7 +463,7 @@ double valueQueue(Queue postQ)
             {
                 double t=toConstant(token);
                 valueStack.push(t);
-                postQ.pop();
+                ++i;
                 continue;
             }
         }
@@ -513,14 +471,14 @@ double valueQueue(Queue postQ)
         if(token=="x")
         {
             valueStack.push(x);
-            postQ.pop();
+            ++i;
             continue;
         }
 
         if(inStruct(var,lungimeVal,token,pozV))
         {
             valueStack.push(var[pozV].value);
-            postQ.pop();
+            ++i;
             continue;
         }
 
@@ -534,7 +492,7 @@ double valueQueue(Queue postQ)
                 valueStack.pop();
                 rez=valueFunction(token,t1,t2);
                 valueStack.push(rez);
-                postQ.pop();
+                ++i;
                 continue;
             }
 
@@ -542,7 +500,7 @@ double valueQueue(Queue postQ)
             valueStack.pop();
             rez=valueFunction(token,t1);
             valueStack.push(rez);
-            postQ.pop();
+            ++i;
             continue;
         }
 
@@ -554,7 +512,7 @@ double valueQueue(Queue postQ)
                 valueStack.pop();
                 rez=-t1;
                 valueStack.push(rez);
-                postQ.pop();
+                ++i;
                 continue;
             }
 
@@ -564,7 +522,7 @@ double valueQueue(Queue postQ)
                 valueStack.pop();
                 rez=valueFunction(token,t1);
                 valueStack.push(rez);
-                postQ.pop();
+                ++i;
                 continue;
             }
 
@@ -574,12 +532,12 @@ double valueQueue(Queue postQ)
             valueStack.pop();
             rez=valueFunction(token,t1,t2);
             valueStack.push(rez);
-            postQ.pop();
+            ++i;
             continue;
         }
 
         valueStack.push(stringToDoubleFull(token));
-        postQ.pop();
+        ++i;
         continue;
     }
 
@@ -593,7 +551,7 @@ double valueFunction(const std::string &s,double t1,double t2)
     toLower(b);
     if(b=="abs")
     {
-        rez=abs(t1);
+        rez=((t1>=0) ? t1 : -t1);
     }
 
     if(b=="acos")
@@ -613,11 +571,9 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="atan2")
     {
-        if(t2==0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=atan2(t1,t2);
+        if(std::isinf(rez) || std::isnan(rez))
+            return 0;
     }
 
     if(b=="bigmul")
@@ -642,10 +598,6 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="divrem")
     {
-        if(t2==0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=t1/t2;
     }
 
@@ -661,29 +613,23 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="ieeeremainder")
     {
-        if(t2==0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=t1-t2*round(t1/t2);
+        if(std::isinf(rez) || std::isnan(rez))
+            return 0;
     }
 
     if(b=="log_u")
     {
-        if(t1<=0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=log(t1);
+        if(std::isinf(rez) || std::isnan(rez))
+            return 0;
     }
 
     if(b=="log10")
     {
-        if(t1<=0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=log10(t1);
+        if(std::isinf(rez) || std::isnan(rez))
+            return 0;
     }
 
     if(b=="max")
@@ -698,10 +644,6 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="pow")
     {
-        if(t1==0 && t2==0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=pow(t1,t2);
     }
 
@@ -727,19 +669,13 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="sqrt")
     {
-        if(t1<0)
-        {
-            errorHandle(texts[4]);
-        }
         rez=sqrt(t1);
+        if(std::isnan(rez))
+            return 0;
     }
 
     if(b=="tan")
     {
-        if(isMulfPiOn2(t1))
-        {
-            errorHandle(texts[4]);
-        }
         rez=tan(t1);
     }
 
@@ -770,16 +706,16 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="/")
     {
-        if(t2==0)
-            errorHandle(texts[4]);
         rez=t1/t2;
+        if(std::isinf(rez))
+            return 0;
     }
 
     if(b=="\\")
     {
-        if(t2==0)
-            errorHandle(texts[4]);
         rez=(int)(t1/t2);
+        if(std::isinf(rez))
+            return 0;
     }
 
     if(b=="<")
@@ -824,10 +760,7 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="mod")
     {
-        if(t2==0)
-        {
-            errorHandle(texts[4]);
-        }
+
         rez=t1-t2*(t1/t2);
     }
 
@@ -843,11 +776,14 @@ double valueFunction(const std::string &s,double t1,double t2)
 
     if(b=="log_b")
     {
-        if(t1<=0)
-            errorHandle(texts[4]);
-        if(t2<=0 || t2==1)
-            errorHandle(texts[4]);
         rez=log(t1)/log(t2);
+        if(std::isinf(rez) || std::isnan(rez))
+            return 0;
+    }
+
+    if(b=="neg")
+    {
+        rez=-t1;
     }
 
     return rez;
@@ -883,7 +819,9 @@ bool isMulfPiOn2(double t)
 
     double piF=toConstant("pi");
     piF/=2;
-    return (piF==t);
+    if(fmod(t,piF)==0)
+        return 1;
+    return 0;
 }
 
 std::string logType(std::string token,unsigned int &binLogs)
@@ -967,6 +905,7 @@ bool hasLog(std::string s)
 }
 
 
+
 bool hasBinaryFunction(std::string token)
 {
     toLower(token);
@@ -1010,27 +949,12 @@ unsigned int findLog(std::string token)
     }
 }
 
-void errorHandle(std::string &errorType)
-{
-    hasError=true;
-    std::ofstream ferrors("../texts/ERRORS.txt");
-    ferrors<<errorType<<'\n';
-    ferrors.close();
-    return;
-}
 
-bool correctParan(std::string text)
+void putPostQueue(Queue postQ)
 {
-    const unsigned int len=text.size();
-    signed int paran=0;
-    for(unsigned int i=0;i<len;++i)
+    while(!postQ.isEmpty())
     {
-        if(text[i]=='(')
-            ++paran;
-        if(text[i]==')')
-            --paran;
+        postQueue[lenPostQueue++]=postQ.front();
+        postQ.pop();
     }
-    if(paran==0)
-        return 1;
-    return 0;
 }

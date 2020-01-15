@@ -14,17 +14,17 @@
 #include <algorithm>
 #include <fstream>
 #include <cstdlib>
-
+#include <cstring>
 #include <iostream>
 
-
+extern std::ifstream fin;
 extern unsigned lungimeVal;
 extern bool userVariables;
 extern unsigned int pozV;
 extern double userVar;
 extern double x;
 
-extern bool hasError;
+
 
 extern unsigned int binLogs;
 
@@ -37,10 +37,11 @@ struct variabile{
     variabile() : isAssigned(0) { }
 };
 
-extern std::string texts[5];
 
-extern char lang;
-void readTexts(unsigned char lang);
+
+extern std::string postQueue[1000];
+extern unsigned int lenPostQueue;
+
 
 void push(struct variabile a[],std::string nume,unsigned int &i);
 bool inStruct(struct variabile a[],unsigned int &len,std::string nume,unsigned int &poz);
@@ -83,9 +84,7 @@ bool hasBinaryFunction(std::string token);
 unsigned int noBinaryFunctions(std::string token);
 unsigned int findLog(std::string token);
 
-void errorHandle(std::string &errorType);
-bool correctParan(std::string text);
 
-
+void putPostQueue(Queue postQ);
 
 #endif //EXPRESSIONEVALUATOR_EVALUATOR_H

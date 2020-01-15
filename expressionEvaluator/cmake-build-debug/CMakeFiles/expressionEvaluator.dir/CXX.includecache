@@ -27,6 +27,8 @@ fstream
 -
 cstdlib
 -
+cstring
+-
 iostream
 -
 
