@@ -7,6 +7,9 @@
 
 #include <string>
 
+
+/// a list of strings to keep the tokens
+
 struct nodeS{
 
     std::string inf;

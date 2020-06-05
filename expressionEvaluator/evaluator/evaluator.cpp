@@ -111,8 +111,6 @@ bool isCosntant(const std::string &s)
             b=="false");
 }
 
-
-
 bool isFunction(const std::string &s)
 {
     std::string b=s;
@@ -168,6 +166,7 @@ bool isBinaryFunction(const std::string &s)
             b=="log_b");
 }
 
+/// unary minus is transformed into "neg"
 unsigned short operatorPrio(const std::string &s)
 {
     std::string b=s;

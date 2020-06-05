@@ -7,27 +7,25 @@
 
 #include "listeDouble.h"
 
-/*typedef struct{
-
-    nodeD *first;
-
-    bool isEmpty();
-    void push(double val);
-    void pop();
-    double top();
-
-}DStack;
-*/
+/// a stack with double values in which the value of the expression will be calculated
 
 struct DStack{
 
     nodeD *first;
 
+    ///ctor
     DStack() : first(nullptr) { }
 
+    ///checks if the stack is empty
     bool isEmpty();
+
+    ///pushes an element to the stack
     void push(double val);
+
+    ///pops the top of the stack
     void pop();
+
+    ///returns the value of the top element of the stack
     double top();
 
 };
